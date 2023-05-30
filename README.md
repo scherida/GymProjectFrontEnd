@@ -4,9 +4,7 @@ Este projeto é utilizado para fins didáticos na disciplina de Tópicos Especia
 
 ## Como rodar o projeto:
 
-Fazer o download do arquivo .zip ou clone da url:
-
-#### `git clone https://gitlab.com/gilbriatore/2023/topicos3n/ex-frontend.git`
+Fazer o download do arquivo .zip ou clone.
 
 Na pasta raiz executar o comando:
 
