@@ -1,3 +1,4 @@
+import "./Aparelho.css";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
@@ -47,24 +48,12 @@ function Treino(){
     }
   
     return (
-        <>
-          <div>
-            <h2>Formulário Treinos</h2>
-            <form>
-              <label for="nomeAparelho">Nome Treino: </label>
-              <input type="text" id="nomeAparelho" name="nomeAparelho"/><br />
-              <label for="descricao">Duração: </label>
-              <input type="text" id="descricao" name="descricao" multiple/><br />
-              <label for="descricao">Exercícios: </label>
-              <input type="text" id="descricao" name="descricao" multiple/><br />
-              <label for="descricao">Usuário: </label>
-              <input type="text" id="descricao" name="descricao" multiple/><br />
-              <button>Salvar</button>
-            </form>
-            <br />
-            {getTabela()}
-          </div>      
-        </>
+      <div className="aparelhos">
+          <div className="conteudo">
+          <h2>Formulário Treinos</h2>
+          {getTabela()}        
+        </div>
+      </div>
     );
 }
 
