@@ -11,14 +11,14 @@ function Aparelho(){
         nomeAparelho: "",
         descricao: "",
       });
-      console.log(setAparelho);
     }
 
     function onChangeAparelho(campo, valor, id){
+      aparelho[campo] = valor;
       setAparelho({
         codigo: id,
-        [campo]: valor,
-      });
+        ...aparelho
+      })
     }
 
     function cancelar(){
@@ -28,12 +28,12 @@ function Aparelho(){
     function salvar(){
       if (aparelho.codigo){
         axios.put("http://localhost:3022/academia/aparelhos/" + aparelho.codigo, aparelho).then(()=>{
-          setAparelhos(null);
+          setAparelho(null);
           getAparelhos();
         })
       } else {
         axios.post("http://localhost:3022/academia/aparelhos/", aparelho).then(()=>{
-          setAparelhos(null);
+          setAparelho(null);
           getAparelhos();
         });
       }
@@ -109,8 +109,7 @@ function Aparelho(){
             value={aparelho.nomeAparelho}
             onChange={(e) => {
               onChangeAparelho(e.target.name, e.target.value, aparelho.codigo);
-            }}
-          />
+            }}/>
           <label>Descrição</label>
           <input
             type="text"
@@ -118,8 +117,7 @@ function Aparelho(){
             value={aparelho.descricao}
             onChange={(e) => {
               onChangeAparelho(e.target.name, e.target.value, aparelho.codigo);
-            }}
-          />
+            }}/>
           <button onClick={salvar}>Salvar</button>
           <button onClick={cancelar}>Cancelar</button>
         </form>
